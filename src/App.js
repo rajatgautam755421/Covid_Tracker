@@ -10,6 +10,9 @@ import React, { useEffect, useState } from 'react';
 import Footer from "./myComponents/footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FetchApi from './myComponents/fetchApi'
+import FetchChart from './myComponents/chart'
+import World from "./myComponents/world"
+import Chart from './myComponents/chart'
 
 // import maps from "./myComponents/googlemaps";
 
@@ -17,32 +20,6 @@ function App() {
 
 
 
-
-  const onDelete = () => {
-    console.log("Deleted");
-  };
-  let todos = [
-    {
-      sno: 1,
-      title: "Go to market",
-      desc: "Please go to the market",
-    },
-    {
-      sno: 2,
-      title: "Do Homework",
-      desc: "Please do  the homework",
-    },
-    {
-      sno: 1,
-      title: "Coding",
-      desc: "Please Code",
-    },
-    {
-      sno: 1,
-      title: "Go to pharmacy",
-      desc: "Please go to pharmacy",
-    },
-  ];
   return (
     <>
 
@@ -60,7 +37,7 @@ function App() {
             exact
             path="/"
 
-          >  <Image />  <Todos todos={todos} onDelete={onDelete} /> </Route>
+          >  <Image />  </Route>
           <Route exact path="/cards">
             <div className="container my-3">
               <div className="row">
@@ -106,9 +83,17 @@ function App() {
 
           </Route>
           <Route exact path="/api">
+            < World />
             <FetchApi />
 
           </Route>
+
+          <Route exact path="/chart">
+            < Chart />
+
+          </Route>
+
+
 
 
         </Switch>

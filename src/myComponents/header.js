@@ -50,7 +50,12 @@ export default function header({ searchBar }) {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/api">
-                COVID Tracker
+                COVIDTracker
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/chart">
+                COVIDChart
               </Link>
             </li>
           </ul>
