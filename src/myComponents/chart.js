@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Bar, Line } from "react-chartjs-2";
-import { FetchApi } from "./fetchApi";
 
 const Chart = () => {
   const [value, setValue] = useState([]);
