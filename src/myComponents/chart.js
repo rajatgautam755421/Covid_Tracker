@@ -4,7 +4,6 @@ import { Bar, Line } from "react-chartjs-2";
 const Chart = () => {
   const [value, setValue] = useState([]);
 
-  const [search, setSearch] = useState("");
   const APIdata = async () => {
     const apiData = await fetch(
       "https://coronavirus-19-api.herokuapp.com/countries"

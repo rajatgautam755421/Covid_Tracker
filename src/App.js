@@ -2,15 +2,15 @@
 import "./App.css";
 import Header from "./myComponents/header";
 import Image from "./myComponents/images";
-import Todos from "./myComponents/todos";
+
 import About from "./myComponents/about";
 import Contact from "./myComponents/contact";
 import Cards from "./myComponents/cards";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Footer from "./myComponents/footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FetchApi from './myComponents/fetchApi'
-import FetchChart from './myComponents/chart'
+
 import World from "./myComponents/world"
 import Chart from './myComponents/chart'
 
