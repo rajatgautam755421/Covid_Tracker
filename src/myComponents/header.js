@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function header({ searchBar }) {
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <>
+      <nav className="navbar container sticky-top navbar-expand-lg navbar-dark bg-dark ">
         <Link className="navbar-brand" to="/">
           Hami Nepal
         </Link>
@@ -58,6 +58,16 @@ export default function header({ searchBar }) {
                 COVIDChart
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/update">
+                Update
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/events">
+                Events
+              </Link>
+            </li>
           </ul>
           {searchBar ? (
             <form className="form-inline my-2 my-lg-0">
@@ -79,6 +89,6 @@ export default function header({ searchBar }) {
           )}
         </div>
       </nav>
-    </div>
+    </>
   );
 }

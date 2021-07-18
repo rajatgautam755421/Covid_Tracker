@@ -1,8 +1,10 @@
 import React from "react";
-
+const myStyle = {
+  color: red,
+}
 export default function about() {
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 style = {myStyle}">
       <h1>This is about page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur

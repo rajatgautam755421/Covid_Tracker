@@ -29,7 +29,7 @@ const FetchApi = () => {
     return (
         <div>
 
-            <div className="input-group container mt-4">
+            <div className="input-group container mt-4 ">
                 <div className="form-outline w-100">
                     <h3> Search For Country</h3>
                     <input type="search" id="form1" className="form-control " onChange={(e) => setSearch(e.target.value)} />
@@ -41,6 +41,7 @@ const FetchApi = () => {
             {/* onChange={(e) => setSearch(e.target.value)} */}
             <div className="container mt-4">
                 <div className="row">
+
 
                     {filteredValues.map((newValue, oldValues) => {
 

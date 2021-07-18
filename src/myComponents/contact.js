@@ -1,13 +1,43 @@
 import React, { useState } from "react";
 import Alert from "react-bootstrap/Alert";
-
+import axios from 'axios'
 
 const Contact = () => {
   const [show, setShow] = useState(false);
-  const [beforeSubmit, afterSubmit] = useState("");
-  const [beforeSubmitP, afterSubmitP] = useState("");
+  const [emai, setEmai] = useState('')
+  const [message, setMessage] = useState('')
   // const handleSubmit = (e)=>{
   //    e.preventDefault();
+
+
+
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      setShow(true)
+
+      const POSTDATA = await axios({
+        method: "POST",
+        url: 'http://localhost:5000/contact/',
+        data: {
+          emai,
+          message,
+        },
+      })
+
+      console.log(POSTDATA)
+      setMessage('')
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+
+
+
+
+
 
   if (show) {
     return (
@@ -23,22 +53,24 @@ const Contact = () => {
     );
   }
 
+
   return (
     <>
       <div className="container my-3">
-        <form onSubmit={() => setShow(true)}>
+        <form onSubmit={handleSubmit} method="POST">
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="email">Email address</label>
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
+              id="email"
+              name="email"
               aria-describedby="emailHelp"
               placeholder="Enter email"
               required
-              value={beforeSubmit}
+              value={emai}
               onChange={(e) => {
-                afterSubmit(e.target.value);
+                setEmai(e.target.value)
               }}
             />
             <small id="emailHelp" className="form-text text-muted">
@@ -46,31 +78,25 @@ const Contact = () => {
             </small>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="message">Message</label>
             <input
-              type="password"
+              type="text"
               className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
+              id="message"
+              name="message"
+              aria-describedby="emailHelp"
+              placeholder="Enter Message"
               required
-              value={beforeSubmitP}
+              value={message}
               onChange={(e) => {
-                afterSubmitP(e.target.value);
+                setMessage(e.target.value)
               }}
             />
-          </div>
-          <div className="form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" for="exampleCheck1">
-              Check me out
-            </label>
+
           </div>
 
-          <input type="submit"></input>
+
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
         </form>
       </div>
     </>
@@ -78,3 +104,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+

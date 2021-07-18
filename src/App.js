@@ -2,7 +2,7 @@
 import "./App.css";
 import Header from "./myComponents/header";
 import Image from "./myComponents/images";
-
+import Event from './myComponents/getEvents'
 import About from "./myComponents/about";
 import Contact from "./myComponents/contact";
 import Cards from "./myComponents/cards";
@@ -10,28 +10,26 @@ import React from 'react';
 import Footer from "./myComponents/footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FetchApi from './myComponents/fetchApi'
-
+import Update from './myComponents/updateData'
 import World from "./myComponents/world"
 import Chart from './myComponents/chart'
+import Scroll from './myComponents/scrollToTop'
+import NoPage from './myComponents/'
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 // import maps from "./myComponents/googlemaps";
 
 function App() {
-
-
-
   return (
     <>
-
-
-
-
+      <MessengerCustomerChat
+        pageId="111241211239691"
+        appId="331146308503808"
+      />
       <Router>
+        <Scroll />
         <Header searchBar={false} />
-
-
         {/* */}
-
         <Switch>
           <Route
             exact
@@ -92,6 +90,16 @@ function App() {
             < Chart />
 
           </Route>
+          <Route exact path="/events">
+            < Event />
+
+          </Route>
+
+          <Route exact path="/update">
+            < Update />
+
+          </Route>
+
 
 
 
@@ -109,3 +117,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
