@@ -14,18 +14,17 @@ import Update from './myComponents/updateData'
 import World from "./myComponents/world"
 import Chart from './myComponents/chart'
 import Scroll from './myComponents/scrollToTop'
-import NoPage from './myComponents/'
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+// import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 // import maps from "./myComponents/googlemaps";
 
 function App() {
   return (
     <>
-      <MessengerCustomerChat
+      {/* <MessengerCustomerChat
         pageId="111241211239691"
         appId="331146308503808"
-      />
+      /> */}
       <Router>
         <Scroll />
         <Header searchBar={false} />

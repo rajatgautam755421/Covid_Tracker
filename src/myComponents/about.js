@@ -1,7 +1,5 @@
 import React from "react";
-const myStyle = {
-  color: red,
-}
+
 export default function about() {
   return (
     <div className="container mt-4 style = {myStyle}">
